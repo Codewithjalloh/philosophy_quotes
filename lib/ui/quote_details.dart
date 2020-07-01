@@ -18,9 +18,11 @@ class QuoteDetails extends StatelessWidget {
 
     // declare texttheme
     final TextTheme textTheme = Theme.of(context).textTheme;
-    
+
     final Widget content = Column(
+      // make the main axis alignment center
       mainAxisAlignment: MainAxisAlignment.center,
+
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -35,11 +37,17 @@ class QuoteDetails extends StatelessWidget {
     if (isInTableLayoutMode) {
       return Center(child: content,);
     }
+
+    // return a scafford widget
     return Scaffold(
+      // add appbar widget
       appBar: AppBar(
+        // app bar title: select quote name or default name "no jokes"
         title: Text(quote?.name ?? "No Jokes"),
       ),
+      // background color to yellow
       backgroundColor: Colors.yellow,
+      // body a center widget 
       body: Center(
         child: content,
       ),
