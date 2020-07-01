@@ -3,14 +3,22 @@ import 'package:philosophyquotes/model/quote_model.dart';
 
 class QuoteDetails extends StatelessWidget {
 
+  // declare bool for layout mode
   final bool isInTableLayoutMode;
+
+  // declare quote from quote model
   final Quote quote;
 
+  // construct class properties
   QuoteDetails({@required this.isInTableLayoutMode, @required this.quote});
+
 
   @override
   Widget build(BuildContext context) {
+
+    // declare texttheme
     final TextTheme textTheme = Theme.of(context).textTheme;
+    
     final Widget content = Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
