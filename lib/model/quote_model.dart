@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 
 class Quote {
 
+  // declared properties
   final int id;
   final String name;
   final String quote;
 
+  // declared required constructor
   Quote({
     @required this.id,
     @required this.name,
@@ -13,7 +15,7 @@ class Quote {
 });
 }
 
-
+// declare quote list 
 final List<Quote> quoteList = <Quote> [
 
   Quote(
