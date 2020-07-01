@@ -22,7 +22,7 @@ class QuoteListing extends StatelessWidget {
         return Container(
           // child is listile
           child: ListTile(
-            // text widget to get the quote 
+            // text widget to get the quote
             title: Text(quote.quote),
             // when you tap you will get the quote selected call back
             onTap: () => quoteSelectedCallback(quote),

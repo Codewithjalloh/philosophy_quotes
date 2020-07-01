@@ -10,15 +10,26 @@ class QuotesMasterDetailSceen extends StatefulWidget {
 
 class _QuotesMasterDetailSceenState extends State<QuotesMasterDetailSceen> {
 
+  // declare static cont for the tablebreakpoint
   static const int tabletBreakpoint = 600;
+
+  //
   Quote _selectedQuote;
+
+  // function for the mobile layout
   Widget _buildMobileLayout() {
+
+    // return custom quote listing
     return QuoteListing(
+
       quoteSelectedCallback: (quoteSelected) {
+        // push to quote details
         Navigator.push(context, MaterialPageRoute(
           builder: (BuildContext context) {
             return QuoteDetails(
+              // make the tablet layout false here
               isInTableLayoutMode: false,
+              // quote selected
               quote: quoteSelected,
             );
           }
@@ -26,7 +37,7 @@ class _QuotesMasterDetailSceenState extends State<QuotesMasterDetailSceen> {
       },
     );
   }
-
+// function for the tablet layout
   Widget _buildTableLayout() {
     return Row(
       children: [
@@ -63,7 +74,10 @@ class _QuotesMasterDetailSceenState extends State<QuotesMasterDetailSceen> {
   Widget build(BuildContext context) {
 
     Widget content;
+    // declare var to get the context shortesside
     var shortestSide = MediaQuery.of(context).size.shortestSide;
+
+    // declare var to get the context orientation
     var orientation = MediaQuery.of(context).orientation;
 
     if (orientation == Orientation.portrait && shortestSide < tabletBreakpoint) {
@@ -78,9 +92,11 @@ class _QuotesMasterDetailSceenState extends State<QuotesMasterDetailSceen> {
 
 
     return Scaffold(
+      // app bar title
       appBar: AppBar(
         title: Text("Philosophy Quotes"),
       ),
+      // return content for the scaffold body
       body: content,
     );
   }
