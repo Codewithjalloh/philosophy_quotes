@@ -47,7 +47,7 @@ class QuoteDetails extends StatelessWidget {
       ),
       // background color to yellow
       backgroundColor: Colors.yellow,
-      // body a center widget 
+      // body a center widget
       body: Center(
         child: content,
       ),
